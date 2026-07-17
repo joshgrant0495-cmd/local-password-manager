@@ -54,32 +54,32 @@ Username and password information can be copied directly to the clipboard using 
 
 ### 1. Application Login
 
-![Application login](screenshots/1 Entering the password.png)
+![Application login](screenshots/1-Entering-the-password.png)
 
 
 ### 2. Main Application Window
 
-![Main window](screenshots/2 Opening the main app window.png)
+![Main window](screenshots/2-Opening-the-main-app-window.png)
 
 
 ### 3. Password Generator
 
-![Password generator](screenshots/3 generating a random password.png)
+![Password generator](screenshots/3-generating-a-random-password.png)
 
 
 ### 4. Saving Credential Information
 
-![Saving information](screenshots/4 saving test information.png)
+![Saving information](screenshots/4-saving-test-information.png)
 
 
 ### 5. Retrieving Saved Credentials
 
-![Dropdown retrieval](screenshots/5 selecting test information.png)
+![Dropdown retrieval](screenshots/5-selecting-test-information.png)
 
 
 ### 6. Retrieved Credential Information
 
-![Information popup](screenshots/6 test information populated in a new window.png)
+![Information popup](screenshots/6-test-information-populated-in-a-new-window.png)
 
 
 ## Technologies Used
