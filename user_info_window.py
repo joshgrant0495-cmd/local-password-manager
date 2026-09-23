@@ -5,17 +5,12 @@ MAIN_COLOUR = "#0A174E"
 SECONDARY_COLOUR = "#F5D042"
 HOVER_COLOUR = "#f2e985"
 
-"""this is a test file to configure the pop up window once the name has been
-selected from the add_info combobox. 
-I have created a retrieve_data method in the Window class in the ctk_class file.
-The retrieve_data method takes in the SQL retrieved from get_db_info method in 
-the DatabaseManager class"""
-
 class InformationPopupWindow(ctk.CTkToplevel):
     def __init__(self, parent, record):
         super().__init__(parent)
 
-        self.geometry("410x400")
+        self.parent = parent
+        self.geometry("500x350")
         self.title("Password Manager")
         self.label = ctk.CTkLabel(self, text="")
         self.configure(fg_color=MAIN_COLOUR)
@@ -54,6 +49,12 @@ class InformationPopupWindow(ctk.CTkToplevel):
                                      command=self.copy_pw)
         self.pr_copy.grid(row=1, column=1)
 
+        self.delete_entry = ctk.CTkButton(master=self, width=35, height=35, fg_color=SECONDARY_COLOUR,
+                                     hover_color=HOVER_COLOUR, text="Delete Entry", text_color="black",
+                                    font=("Segoe UI", 18),
+                                    command=self.delete)
+        self.delete_entry.grid(row=2, column=1)
+
         self.populate(record)
 
     def populate(self, record):
@@ -63,10 +64,16 @@ class InformationPopupWindow(ctk.CTkToplevel):
 
         self.username = record["username"]
         self.password = record["password"]
+        self.id = record["id"]
 
     def copy_un(self):
         pyp.copy(self.username)
 
     def copy_pw(self):
         pyp.copy(self.password)
+
+    def delete(self):
+        self.parent.database.delete_record(id=self.id)
+        self.parent.populate_names()
+        self.destroy()
 

@@ -1,4 +1,21 @@
+# Local authentication and encrypted data
+master_password/
+master_encryption/
+
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+
+# Virtual environment
+.venv/
+
+# IDE/editor configuration
 .idea/
-*.db
+.vscode/
+
+# PyInstaller output
+build/
+dist/
+
+# Local/test files
+test.py
